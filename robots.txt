@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://jp0301.github.io/sitemap/sitemap-index.xml
+Host: https://jp0301.github.io
