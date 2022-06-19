@@ -3,7 +3,7 @@ date: '2022-06-14'
 title: 'Java 시작하기'
 categories: ['Java', 'Study']
 summary: '자바 시작하면서 간단하게 탄생과 특징, 주석에 대한 내용을 작성했습니다.'
-thumbnail: './java_1.png'
+thumbnail: './thumbnail_javastudy.png'
 ---
 
 📚
