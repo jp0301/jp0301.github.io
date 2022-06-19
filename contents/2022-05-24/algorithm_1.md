@@ -1,7 +1,7 @@
 ---
 date: '2022-05-24'
 title: '알고리즘 공부 방향'
-categories: ['algorithm,', 'Study']
+categories: ['algorithm', 'Study']
 summary: '알고리즘을 공부하면서 방향을 알아보려고 정리했습니다.'
 thumbnail: './thumbnail_algorithm.png'
 ---
