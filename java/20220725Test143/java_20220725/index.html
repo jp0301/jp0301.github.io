@@ -1,0 +1,659 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta data-react-helmet="true" name="naver-site-verification" content="70a79a1d26fe1337b3fc9737a01e9c04a5d701a0"/><meta data-react-helmet="true" name="google-site-verification" content="t5nlBjhvJ2xF1JI_gDqQNILE-an0SLUYRC6Eu9uowSE"/><meta data-react-helmet="true" name="twitter:creator" content="@사용자이름"/><meta data-react-helmet="true" name="twitter:site" content="@사용자이름"/><meta data-react-helmet="true" name="twitter:image" content="/static/2b483545a6dd2cd61fd383eccee08e5f/thumbnail_education.png"/><meta data-react-helmet="true" name="twitter:description" content="StringBuffer, StringBuilder, StringTokenizer, Character Set, Calender"/><meta data-react-helmet="true" name="twitter:title" content="교육 회고 - 자바의 주요 클래스(3)"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" property="og:site_name" content="교육 회고 - 자바의 주요 클래스(3)"/><meta data-react-helmet="true" property="og:url"/><meta data-react-helmet="true" property="og:image" content="/static/2b483545a6dd2cd61fd383eccee08e5f/thumbnail_education.png"/><meta data-react-helmet="true" property="og:description" content="StringBuffer, StringBuilder, StringTokenizer, Character Set, Calender"/><meta data-react-helmet="true" property="og:title" content="교육 회고 - 자바의 주요 클래스(3)"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html;charset=UTF-8"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" name="description" content="StringBuffer, StringBuilder, StringTokenizer, Character Set, Calender"/><meta name="generator" content="Gatsby 4.16.0"/><style data-href="/styles.0109ae7f897db2fecdd6.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><title data-react-helmet="true">교육 회고 - 자바의 주요 클래스(3)</title><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><link rel="canonical" href="https://jp0301.github.io/java/20220725Test143/java_20220725/" data-baseprotocol="https:" data-basehost="jp0301.github.io"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion="css 13ku56z">.css-13ku56z{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:100%;}</style><main class="css-13ku56z e1strnqo0"><style data-emotion="css-global 1ay7jhy">@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700');*{padding:0;margin:0;box-sizing:border-box;font-family:'Nanum Myeongjo',sans-serif;}html,body,#___gatsby{height:100%;}a,a:hover{color:inherit;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}</style><style data-emotion="css 16cz9yp">.css-16cz9yp{position:relative;width:100%;height:400px;}@media (max-width: 768px){.css-16cz9yp{height:300px;}}</style><div class="css-16cz9yp e1opi4mu1"><style data-emotion="css 1xxvaos">.css-1xxvaos{z-index:-1;width:100%;height:400px;object-fit:cover;-webkit-filter:brightness(0.25);filter:brightness(0.25);}@media (max-width:768px){.css-1xxvaos{height:300px;}}</style><div data-gatsby-image-wrapper="" style="position:absolute" class="gatsby-image-wrapper gatsby-image-wrapper-constrained css-1xxvaos e1opi4mu0"><div style="max-width:768px;display:block"><img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height=&#x27;449.99999999999994&#x27; width=&#x27;768&#x27; xmlns=&#x27;http://www.w3.org/2000/svg&#x27; version=&#x27;1.1&#x27;%3E%3C/svg%3E" style="max-width:100%;display:block;position:static"/></div><div aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear;background-color:#383848;position:absolute;top:0;left:0;bottom:0;right:0"></div><picture><source type="image/webp" data-srcset="/static/2b483545a6dd2cd61fd383eccee08e5f/19ba9/thumbnail_education.webp 192w,/static/2b483545a6dd2cd61fd383eccee08e5f/0a4ac/thumbnail_education.webp 384w,/static/2b483545a6dd2cd61fd383eccee08e5f/92bd5/thumbnail_education.webp 768w" sizes="(min-width: 768px) 768px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 768px) 768px, 100vw" decoding="async" loading="lazy" data-src="/static/2b483545a6dd2cd61fd383eccee08e5f/afa9f/thumbnail_education.png" data-srcset="/static/2b483545a6dd2cd61fd383eccee08e5f/a4212/thumbnail_education.png 192w,/static/2b483545a6dd2cd61fd383eccee08e5f/815c2/thumbnail_education.png 384w,/static/2b483545a6dd2cd61fd383eccee08e5f/afa9f/thumbnail_education.png 768w" alt="thumbnail"/></picture><noscript><picture><source type="image/webp" srcSet="/static/2b483545a6dd2cd61fd383eccee08e5f/19ba9/thumbnail_education.webp 192w,/static/2b483545a6dd2cd61fd383eccee08e5f/0a4ac/thumbnail_education.webp 384w,/static/2b483545a6dd2cd61fd383eccee08e5f/92bd5/thumbnail_education.webp 768w" sizes="(min-width: 768px) 768px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 768px) 768px, 100vw" decoding="async" loading="lazy" src="/static/2b483545a6dd2cd61fd383eccee08e5f/afa9f/thumbnail_education.png" srcSet="/static/2b483545a6dd2cd61fd383eccee08e5f/a4212/thumbnail_education.png 192w,/static/2b483545a6dd2cd61fd383eccee08e5f/815c2/thumbnail_education.png 384w,/static/2b483545a6dd2cd61fd383eccee08e5f/afa9f/thumbnail_education.png 768w" alt="thumbnail"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div><style data-emotion="css m1156n">.css-m1156n{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:768px;height:100%;margin:0 auto;padding:60px 0;color:#ffffff;}@media (max-width: 768px){.css-m1156n{width:100%;padding:40px 20px;}}</style><div class="css-m1156n e1st1jau3"><style data-emotion="css gywgo7">.css-gywgo7{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#ffffff;color:#000000;font-size:22px;cursor:pointer;box-shadow:0 0 10px rgba(0, 0, 0, 0.3);}@media (max-width: 768px){.css-gywgo7{width:30px;height:30px;font-size:18px;}}</style><div class="css-gywgo7 e1st1jau2"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"></path></svg></div><style data-emotion="css gn4qtp">.css-gn4qtp{display:-webkit-box;overflow:hidden;overflow-wrap:break-word;margin-top:auto;text-overflow:ellipsis;white-space:normal;-webkit-line-clamp:2;-webkit-box-orient:vertical;font-size:45px;font-weight:800;}@media (max-width: 768px){.css-gn4qtp{font-size:30px;}}</style><div class="css-gn4qtp e1st1jau1">교육 회고 - 자바의 주요 클래스(3)</div><style data-emotion="css 3gcnt2">.css-3gcnt2{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:10px;font-size:18px;font-weight:700;}@media (max-width: 768px){.css-3gcnt2{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;font-size:15px;font-weight:400;}}</style><div class="css-3gcnt2 e1st1jau0"><div>Java / Study / 국비</div><div>2022.07.25.</div></div></div></div><style data-emotion="css uo146q">.css-uo146q{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:768px;margin:0 auto;padding:100px 0;word-break:break-all;line-height:1.8;font-size:16px;font-weight:400;}.css-uo146q p{padding:3px 0;}.css-uo146q h1,.css-uo146q h2,.css-uo146q h3{font-weight:800;margin-bottom:30px;}.css-uo146q *+h1,.css-uo146q *+h2,.css-uo146q *+h3{margin-top:80px;}.css-uo146q hr+h1,.css-uo146q hr+h2,.css-uo146q hr+h3{margin-top:0;}.css-uo146q h1{font-size:30px;}.css-uo146q h2{font-size:25px;}.css-uo146q h3{font-size:20px;}.css-uo146q blockquote{margin:30px 0;padding:5px 15px;border-left:2px solid #000000;font-weight:800;}.css-uo146q ol,.css-uo146q ul{margin-left:20px;padding:30px 0;}.css-uo146q hr{border:1px solid #000000;margin:100px 0;}.css-uo146q a{color:#4263eb;-webkit-text-decoration:underline;text-decoration:underline;}.css-uo146q pre[class*='language-']{margin:30px 0;padding:15px;font-size:15px;}.css-uo146q pre[class*='language-']::-webkit-scrollbar-thumb{background:rgba(255, 255, 255, 0.5);border-radius:3px;}.css-uo146q code[class*='language-'],.css-uo146q pre[class*='language-']{tab-size:2;}@media (max-width: 768px){.css-uo146q{width:100%;padding:80px 20px;line-height:1.6;font-size:14px;}.css-uo146q h1{font-size:23px;}.css-uo146q h2{font-size:20px;}.css-uo146q h3{font-size:17px;}.css-uo146q img{width:100%;}.css-uo146q hr{margin:50px 0;}}</style><div class="css-uo146q e1ijh0y10"><p>자바의 주요(중요) 클래스에 대해 학습중이며 지금은 자바에서 기본적으로 제공하는 주요 클래스들 중 String 클래스에 대해 이어 배웠습니다. 오늘 학습한 내용은 <br />
+<strong>StringBuffer / StringBuilder / StringTokenizer</strong> <br />
+<strong>Character Set / Calendar 클래스</strong> 에 대해 학습하였습니다.</p>
+<h2>StringBuffer 클래스</h2>
+<ul>
+<li>임시로 물을 가둬둔 공간이 Buffer</li>
+<li>문자열을 다루는 클래스에는 String, StringBuffer, StringBuilder 가 있음</li>
+<li>String 은 편하고 StringBuffer는 기능이 많고 StringTokenizer는 성능이 좋음</li>
+</ul>
+<p>문자열을 처리하는 클래스로 String 클래스와의 차이점은 <strong>String 클래스는 내부 문자열 데이터의 수정이 불가능</strong>하지만 StringBuffer 클래스는 문자열을 사용할 때
+<strong>내부 문자열을 실행 단계(런타임 시점)에서 변경할 수 있다.</strong></p>
+<p>즉, StringBuffer 객체는 가변적인 길이를 가지므로 객체를 생성하는 시점에서 미리 그 크기나 값을 지정하거나 실행 시점에 버퍼의 크기를 바꿀 수 있는 기능을 제공한다.</p>
+<h2>StringBuilder</h2>
+<p>또한, JDK 1.5 이후부터는 문자열을 처리하는 StringBuilder 클래스도 제공한다.
+StringBuilder 클래스의 기능은 StringBuffer 클래스와 동일하지만 가장 큰 차이점은 <code class="language-text">multi-thread unsafe</code> 라는 점이다.</p>
+<ul>
+<li>StringBuffer = multi-thread safety</li>
+</ul>
+<p>thread = 기본적으로 작업들을 처리하는 단위
+즉, Syncronization(동기화)이 없기 때문에 StringBuffer보다 빠르며 동시성(동기화) 문제가 없다면 StringBuilder 를 사용하는 것이 성능을 향샹시킬 수 있다.</p>
+<ul>
+<li>String: 문자열 연산이 적고 멀티쓰레드 환경일 경우</li>
+<li>StringBuffer: 문자열 연산이 많고 멀티쓰레드 환경일 경우</li>
+<li>StringBuilder: 문자열 연산이 많고 단일쓰레드이거나 동기화를 고려하지 않아도 되는 경우</li>
+</ul>
+<h3>Test138</h3>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test138</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name">String</span> str1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"seoul"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> str2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"seoul"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str1 <span class="token operator">==</span> str2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> false</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str1<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>str2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//StringBuffer의 equals 메소드</span>
+        <span class="token comment">//--==>> true</span>
+
+        <span class="token class-name">StringBuffer</span> sb1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token string">"korea"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">StringBuffer</span> sb2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token string">"korea"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sb1 <span class="token operator">==</span> sb2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> false</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sb1<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>sb2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> false</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"-----------------------------------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sb1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> korea      //-- StringBuffer 출력</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sb1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> korea      //-- String 출력</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sb1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>sb2<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> true       //-- String의 equals 메소드</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"-----------------------------------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">StringBuffer</span> sb3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//-- StringBuffer 기본 생성자 호출(인스턴스 생성 과정)</span>
+        <span class="token comment">//   기본적으로 생성되는 버퍼의 크기는 16</span>
+
+        <span class="token comment">// capacity()</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"버퍼 크기 : "</span> <span class="token operator">+</span> sb3<span class="token punctuation">.</span><span class="token function">capacity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> 버퍼 크기 : 16</span>
+
+        <span class="token comment">////////////////////////////////////////////////////////////</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sb3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> X (아무것도 안나옴, 공백조차 없다)</span>
+
+        <span class="token comment">/*
+            String name = "김연우";
+            name += "김범수";
+            name += "나얼";
+            name += "박효신";
+
+            System.out.println(name);
+            //--==>> 김연우김범수나얼박효신
+        */</span>
+
+        sb3<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"seoul"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>              <span class="token comment">// sb += "seoul";</span>
+        sb3<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"korea"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>              <span class="token comment">// sb += "korea";</span>
+        sb3<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"우리나라"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// sb += "우리나라";</span>
+        sb3<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"대한민국"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// sb += "대한민국";</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sb3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> seoulkorea우리나라대한민국</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sb3<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> seoulkorea우리나라대한민국</span>
+
+        <span class="token comment">// 버퍼 크기 다시 확인</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"버퍼 크기 : "</span> <span class="token operator">+</span> sb3<span class="token punctuation">.</span><span class="token function">capacity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> 버퍼 크기 : 34</span>
+
+        <span class="token comment">////////////////////////////////////////////////////////////</span>
+
+        <span class="token class-name">String</span> temp1 <span class="token operator">=</span> <span class="token string">"java and oracle"</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>temp1<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> JAVA AND ORACLE</span>
+
+        <span class="token class-name">String</span> temp2 <span class="token operator">=</span> <span class="token string">"JAVA AND ORACLE"</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>temp2<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> java and oracle</span>
+
+        <span class="token comment">//System.out.println(sb3.toUpperCase());</span>
+        <span class="token comment">//System.out.println(sb3.toLowerCase());</span>
+        <span class="token comment">//--==>> 에러 발생(컴파일 에러)</span>
+
+        <span class="token class-name">String</span> temp3 <span class="token operator">=</span> sb3<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>temp3<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> SEOULKOREA우리나라대한민국</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>temp3<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> seoulkorea우리나라대한민국</span>
+
+
+        <span class="token comment">// ○ 대상 문자열(sb3) 중 seoul 앞에 "한국" 이라는 문자열 추가</span>
+        <span class="token comment">//   -> 한국seoulkorea우리나라대한민국</span>
+        sb3<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"한국"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"seoul 앞에 『한국』 추가 : "</span> <span class="token operator">+</span> sb3<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> seoul앞에 『한국』 추가 : 한국seoulkorea우리나라대한민국</span>
+
+
+        <span class="token comment">// ○ 대상 문자열(sb3) 중 korea 뒤에 "사랑" 이라는 문자열 추가</span>
+        <span class="token comment">//   -> 한국seoulkorea사랑우리나라대한민국</span>
+        <span class="token comment">//테스트 1</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sb3<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> 한국seoulkorea우리나라대한민국</span>
+        <span class="token comment">//테스트 2</span>
+        sb3<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token string">"사랑"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"korea 뒤에 『사랑』 추가 : "</span> <span class="token operator">+</span> sb3<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> korea 뒤에 『사랑』 추가 : 한국seoulkorea사랑우리나라대한민국</span>
+
+        <span class="token comment">//테스트 3</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sb3<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"korea"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> 7</span>
+        <span class="token comment">//테스트 4</span>
+        <span class="token comment">//System.out.println(sb3.insert(sb3.indexOf("korea"), "사랑"));</span>
+        <span class="token comment">//--==>> 한국 seoul사랑korea우리나라대한민국</span>
+        <span class="token comment">//테스트 5</span>
+        <span class="token comment">//sb3.insert(sb3.indexOf("korea") + 5, "사랑"));</span>
+        <span class="token comment">//System.out.println(sb3.toString());</span>
+        <span class="token comment">//--==>> 한국seoulkorea사랑우리나라대한민국</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sb3<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>sb3<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"korea"</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"korea"</span><span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"사랑"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> 한국seoulkorea사랑우리나라대한민국</span>
+
+        <span class="token comment">// ○ 대상 문자열(sb3) 중 "우리나라" 문자열 삭제</span>
+        <span class="token comment">//sb3.delete(14,18);</span>
+        <span class="token comment">//System.out.println(sb3); //--==>> 한국seoulkorea사랑대한민국</span>
+
+        sb3<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>sb3<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"우리나라"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> sb3<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"우리나라"</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"우리나라"</span><span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sb3<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> 한국seoulkorea사랑대한민국</span>
+
+        <span class="token comment">// ○ 대상 문자열(sb3) 중 korea 이후에 문자열 삭제(korea 포함)</span>
+        <span class="token comment">//   -> 한국seoulkorea사랑대한민국 -> 한국seoul</span>
+        <span class="token comment">//sb3.delete(7,18)</span>
+        sb3<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>sb3<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"korea"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> sb3<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sb3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//--==>> 한국seoul</span>
+
+        <span class="token comment">////////////////////////////////////////////////////////////</span>
+
+        <span class="token comment">// 버퍼 크기 다시 확인</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"버퍼 크기 : "</span> <span class="token operator">+</span> sb3<span class="token punctuation">.</span><span class="token function">capacity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> 버퍼 크기 : 34</span>
+
+        <span class="token comment">// 문자열(sb3)의 길이 확인</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"문자열의 길이 : "</span> <span class="token operator">+</span> sb3<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> 문자열의 길이 : 7</span>
+
+        <span class="token comment">// 버퍼 크기 조절</span>
+        <span class="token comment">// -> 현재 문자열을 담아둘 수 있는 버퍼의 크기로...</span>
+        <span class="token comment">// trimToSize()</span>
+        sb3<span class="token punctuation">.</span><span class="token function">trimToSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 버퍼 크기 조절 이후 버퍼 크기 다시 확인</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"버퍼 크기 : "</span> <span class="token operator">+</span> sb3<span class="token punctuation">.</span><span class="token function">capacity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> 버퍼 크기 : 7</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3>Test 139</h3>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test139</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name">String</span> s1 <span class="token operator">=</span> <span class="token string">"123456789"</span><span class="token punctuation">;</span>
+        s1 <span class="token operator">=</span> <span class="token punctuation">(</span>s1 <span class="token operator">+</span> <span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token char">'2'</span><span class="token punctuation">,</span> <span class="token char">'A'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 123456789</span>
+        <span class="token comment">// 123456789123</span>
+        <span class="token comment">// 1A34567891A3</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"s1 : "</span> <span class="token operator">+</span> s1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> 1A34567891A3</span>
+
+        <span class="token class-name">StringBuffer</span> s2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token string">"123456789"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        s2<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">"24"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// "123456789".delete(0,3).replace(1,3, "24").delete(4,6);</span>
+        <span class="token comment">// "456789".replace(1,3, "24").delete(4,6);</span>
+        <span class="token comment">// "424789".delete(4,6);</span>
+        <span class="token comment">// "4247"</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"s2 : "</span> <span class="token operator">+</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>>  s2 : 4247</span>
+
+        <span class="token class-name">StringBuffer</span> s3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token string">"12345789"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> s4 <span class="token operator">=</span> s3<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// "123456789".substring(3,6)</span>
+        <span class="token comment">// "456"</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"s4 : "</span> <span class="token operator">+</span> s4<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> s4 : 456</span>
+
+        <span class="token class-name">StringBuffer</span> s5 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token string">"123456789"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        s5<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"24"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// "123456789".delete(0,3).delete(1,3).delete(2,5).insert(1,"24");</span>
+		<span class="token comment">// "456789".delete(1,3).delete(2,5).insert(1,"24");</span>
+		<span class="token comment">// "4789".delete(2,5).insert(1,"24");</span>
+		<span class="token comment">// "47".insert(1,"24");</span>
+		<span class="token comment">// "4247"</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"s5 : "</span> <span class="token operator">+</span> s5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">//--==>> s5 : 4247</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2>StringTokenizer 클래스</h2>
+<ul>
+<li>StringTokenizer 클래스를 알면 자바의 컬렉션 프레임워크를 배울 때 어떤 구조인지 파악하기 용기하다.</li>
+</ul>
+<p>문자열 파싱(Parsing)을 위한 정보를 제공하는 클래스로 파싱(parsing) 하고자 하는 문자열을 인자로 받아 생성하는데, 여기에서 파싱(parsing)이란 하나의 문자열을 여러 문자열로 나누는 작업을 의미하게 되며, 이 때 나누는 단위가 되는 문자열을 토큰(token)이라고 한다.</p>
+<p>StringTokenizer 클래스를 사용하기 위해서는 java.util 패키지의 StringTokenizer 를 import 해야 한다.</p>
+<p>StringTokenizer 클래스는 호환성을 유지하는 목적으로 보관 유지되고 있으며, 문자열을 파싱(parsing) 하기 위해서는 String 클래스의 split() 메소드나 java.util.regex 패키지를 사용할 것을 권장하고 있다.</p>
+<h3>생성자</h3>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token comment">/* 원형 */</span>
+<span class="token class-name">StringTokenizer</span><span class="token punctuation">(</span><span class="token class-name">String</span> str<span class="token punctuation">)</span>
+<span class="token class-name">StringTokenizer</span><span class="token punctuation">(</span><span class="token class-name">String</span> str<span class="token punctuation">,</span> <span class="token class-name">String</span> delim<span class="token punctuation">)</span>
+<span class="token class-name">StringTokenizer</span><span class="token punctuation">(</span><span class="token class-name">String</span> str<span class="token punctuation">,</span> <span class="token class-name">String</span> delim<span class="token punctuation">,</span> <span class="token keyword">boolean</span> returnDelims<span class="token punctuation">)</span>
+</code></pre></div>
+<p>주어진 문자열 str을 단어로 분리하는 객체를 생성하며 공백(구분) 문자는 delim 에 포함된 문자로 처리하게 된다. 만약 returnDelims가 true이면 구분 문자도 분리된 데이터로 처리하게 된다.</p>
+<h3>Test140</h3>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">BufferedReader</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">InputStreamReader</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">StringTokenizer</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test140</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span>
+	<span class="token punctuation">{</span>
+		<span class="token class-name">String</span> strTemp<span class="token punctuation">;</span>
+		<span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> strArr<span class="token punctuation">;</span>
+		<span class="token keyword">int</span> n<span class="token punctuation">;</span>
+
+		<span class="token class-name">BufferedReader</span> br <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"파싱할 문자열 입력(컴마 구분) : "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		strTemp <span class="token operator">=</span> br<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//-- "사과, 딸기, 바나나, 포도";</span>
+
+		<span class="token comment">// StringTokenizer 클래스 인스턴스 생성</span>
+		<span class="token class-name">StringTokenizer</span> st <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringTokenizer</span><span class="token punctuation">(</span>strTemp<span class="token punctuation">,</span> <span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">//-- strTemp 를 대상 문자열로... ("사과, 딸기, 바나나, 포도")</span>
+		<span class="token comment">//   『,』를 구분자로...</span>
+
+		<span class="token comment">// st의 『countTokens()』</span>
+		<span class="token comment">// int countTokens()</span>
+		<span class="token comment">// : 파싱된 문자열의 갯수를 반환(리턴)한다.</span>
+		strArr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span>st<span class="token punctuation">.</span><span class="token function">countTokens</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token comment">//                               ------------</span>
+		<span class="token comment">//                                          4</span>
+		<span class="token comment">// → strArr = new String[4];</span>
+
+		n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+		<span class="token keyword">while</span><span class="token punctuation">(</span>st<span class="token punctuation">.</span><span class="token function">hasMoreTokens</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>				<span class="token comment">//true true true true false</span>
+		<span class="token punctuation">{</span>
+			strArr<span class="token punctuation">[</span>n<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> st<span class="token punctuation">.</span><span class="token function">nextToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token comment">//strArr[0]	= "사과"</span>
+			<span class="token comment">//strArr[1]	= "딸기"</span>
+            <span class="token comment">//strArr[2]	= "바나나"</span>
+            <span class="token comment">//strArr[3]	= "포도"</span>
+		<span class="token punctuation">}</span>
+        <span class="token comment">//     ▼     ▽      ▽         ▽</span>
+        <span class="token comment">//     -----------------------</span>
+        <span class="token comment">//      사과    딸기    바나나    포도</span>
+        <span class="token comment">//     ------------------------</span>
+
+		<span class="token comment">//-- 『hasMoreTokens()』</span>
+		<span class="token comment">//    : 사용할 수 있는 토큰이 남아있는 경우 true 를 반환</span>
+		<span class="token comment">//      더 이상 사용할 토큰이 없는 경우 false를 반환</span>
+		<span class="token comment">//      확인 결과만 반환할 뿐...</span>
+		<span class="token comment">//      실제 내용을 읽어들이지도 않고,</span>
+		<span class="token comment">//      실제 내용을 읽어들이는 헤드를 이동시키지도 않는다.</span>
+
+
+		<span class="token comment">//-- 『nextToken()』</span>
+		<span class="token comment">//    : 다음 토큰을 얻어온다.</span>
+		<span class="token comment">//      다음 토큰을 얻어오며 헤드를 이동시키게 된다.</span>
+		<span class="token comment">//      구분자를 바꾸었을 경우 다음 호출에도</span>
+		<span class="token comment">//      바뀐 구분자를 이용하여 토큰을 분리한다.</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"파싱된 토큰(문자열) : "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token class-name">String</span> str <span class="token operator">:</span> strArr<span class="token punctuation">)</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>str <span class="token operator">+</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">//--==>> 파싱된 토큰(문자열) : 사과 딸기 바나나 포도 수박</span>
+
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2>캐릭터 셋(Character Set)</h2>
+<p><strong>■ 유니코드(Unicode)</strong> <br />
+국제 표준으로 제정된 2바이트계의 만국 공통의 국제 문자부호체계(UCS: Universal Code System)를 말한다.<br />
+애플컴퓨터, IBM, 마이크로소프트 등이 컨소시엄을 설립한 유니코드(Unicode)가
+<br />
+1990년에 첫 버전을 발표하였고 ISO/IEC JTC1 에서 1995년 9월 국제표준으로 제정하였다.
+<br />
+공식 명칭은 <code class="language-text">ISO/IEC 10646-1(Universal Multiple-Octet Coded Character Set)</code>이다.</p>
+<p>데이터의 교환을 원활하게 하기 위하여 문자 1개에 부여되는 값을 16비트로 통일하였다.
+코드의 1문자 당 영어는 7비트, 비영어는 8비트, 한글이나 일본어는 16비트의 값을 가지게 되는데 이들을 모두 16비트로 통일한 것이다.
+<br />
+<br /></p>
+<p><strong>■ UTF-8 과 UTF-16</strong> <br />
+UTF-8 과 UTF-16 의 차이를 한 마디로 말하면 문자를 표현할 때의 단위가 다르다는 것이다.
+UTF-8 은 8비트 가변장 멀티바이트에서 문자를 표현하고, UTF-16 은 16비트 가변장 멀티바이트에서 문자를 표현한다.
+<br /></p>
+<ul>
+<li>UTF-8(8bit UCS Transformation Format) <br />
+웹에서 기본적으로 사용하는 코드.
+UCS-2로 정의되는 문자 집합을 이용하여 기술된 문자열을
+바이트 열로 변환하는 방식의 1개 1개 문자를 1~6바이트 가변장
+멀티바이트로 변환한다.</li>
+<li>UTF-15(16bit UCS Transformation Format) <br />
+자바의 기본 코드, 자바에서는 문자 하나를 저장하면 바이트 수는
+영문자인드, 한굴문자이든 2바이트를 차지하게 된다.
+UCS-2 로 정의되는 문자 집합을 이용하여 기술된 문자열에
+UCS-4 의 일부의 문자를 채워넣기 위한 인코딩 방식,
+UTF-S 과 병용할 수 있다.
+UCS-2 로 이용할 수 있는 문자 수를 대폭 늘릴 숭 있다.</li>
+</ul>
+<center>`※ 자바단에서는 UTF-16을 사용하고 웹에서는 UTF-8을 사용하기 때문에` <br />
+`경우에 따라 변환해야 하는 상황이 발생할 수 있다.`</center>
+<br />
+<br />
+<p><strong>■ 문자 코드의 종류</strong></p>
+<ul>
+<li>
+<p>KSC5601 <br />
+한글 완성형 표준(한글 2, 350자 표현); <br />
+한국공업표준 정보처리분야(C)의 5601번 표준안.</p>
+</li>
+<li>
+<p>KSC5636 <br />
+영문자에 대한 표준
+한국공업표준 정보처리분야(C)의 5636번 표준안. <br />
+기존 ASCII Code 에서 역슬래시()를 원(￦) 표시로 대체.</p>
+</li>
+<li>
+<p>EUC-KR(MS949) <br />
+Bell-Laboratories 에서 유닉스 상에서 영문자 이외의 문자를 지원하기 위해 제안한 확장 유니코드(Extend UNIX Code) 중 한글 인코딩 방식.
+영문은 KSC5636으로 처리하고, 한글은 KSC5601로 처리. <br />
+즉, EUC-KR(MS949) = KSC5636 + KSC5601
+<br />
+<br /></p>
+</li>
+<li>
+<p>UTF-8
+영문과 숫자는 1바이트, 한글은 3바이트로 표현 <br />
+(웹에서 많이 사용. UTF-8 형식으로 JSP를 작성할 때에는 파일도 UTF-8 형식으로 저장해야 한다.</p>
+</li>
+<li>
+<p>UTF-16
+자바 기본 문자 코드.
+영문과 숫자는 1바이트, 한글은 2바이트로 표현</p>
+</li>
+<li>
+<p>ISO-8859-1
+서유럽 언어 표기에 필요한 US-ASCII 에 없는 94개 글자의 순차적 나열.</p>
+</li>
+</ul>
+<h3>Test141</h3>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">UnsupportedEncodingException</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test141</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">UnsupportedEncodingException</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buf<span class="token punctuation">;</span>
+		<span class="token class-name">String</span> name <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"박원석"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"디폴트 캐릭터셋 : "</span> <span class="token operator">+</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"file.encoding"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">//--==>> 디폴트 캐릭터셋 : MS949</span>
+
+		<span class="token comment">// 『String.getBytes()』</span>
+		<span class="token comment">//  : 디폴트 캐릭터셋으로 바이트 배열을 반환하는 메소드</span>
+		buf <span class="token operator">=</span> name<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Length : "</span> <span class="token operator">+</span> buf<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> Length : 6</span>
+
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">byte</span> b <span class="token operator">:</span> buf<span class="token punctuation">)</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"["</span> <span class="token operator">+</span> b <span class="token operator">+</span> <span class="token string">"]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">/* --==>> 한글을 2바이트로 쪼갬
+		[-71]
+		[-38]
+		[-65]
+		[-8]
+		[-68]
+		[-82]
+		*/</span>
+
+		<span class="token comment">// "UTF-8" 캐릭터셋으로 바이트 배열을 변환</span>
+		buf <span class="token operator">=</span> name<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">//--==>> 에러 발생(컴파일 에러)  UnsupportedEncodingException</span>
+
+		<span class="token comment">// → 예외 처리 후... 다시 확인</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Length : "</span> <span class="token operator">+</span> buf<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> Length : 9</span>
+
+
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">byte</span> b <span class="token operator">:</span> buf<span class="token punctuation">)</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"["</span> <span class="token operator">+</span> b <span class="token operator">+</span> <span class="token string">"]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> 한글을 3바이트로 쪼갬</span>
+		<span class="token comment">/*
+		[-21]
+		[-80]
+		[-107]
+		[-20]
+		[-101]
+		[-112]
+		[-20]
+		[-124]
+		[-99]
+		*/</span>
+
+		<span class="token comment">// new String("박원석");</span>
+		<span class="token comment">// new String(바이트배열, 인코딩방식);</span>
+		<span class="token comment">// new String(buf, "utf-8");</span>
+
+		<span class="token comment">// utf-8 형태로 저장된 바이트 배열을</span>
+		<span class="token comment">// String 객체로 파라미터 값 『utf-8』을 부여하여 생성</span>
+		<span class="token comment">// → 즉, utf-8 기반으로 buf 바이트배열을 합쳐</span>
+		<span class="token comment">//    문자열 객체 생성한 후 이름 출력</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Value 1 : "</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>buf<span class="token punctuation">,</span> <span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> Value 1 : 박원석</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token comment">// UTF-8 형태로 저장된 바이트 배열을</span>
+		<span class="token comment">// String 객체로 파라미터 값 없이</span>
+		<span class="token comment">// 디폴트 캐릭터셋(MS949)을 부여하여 생성</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Value 2 : "</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> Value 2 : 諛뺤썝?꽍</span>
+
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 개행</span>
+
+		<span class="token class-name">String</span> convert <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>name<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"euc-kr"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Value 3 : "</span> <span class="token operator">+</span> convert<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> Value 3 : ?????</span>
+
+		buf <span class="token operator">=</span> convert<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Length : "</span> <span class="token operator">+</span> buf<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> Length : 5</span>
+
+		buf <span class="token operator">=</span> convert<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Length : "</span> <span class="token operator">+</span> buf<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> Length : 14</span>
+
+		<span class="token comment">/*
+		※ check~!!!
+		   euc-kr 을 utf-8 로 변환하겠다는 의도로
+		   위와 같이 코딩을 해버리면
+		   이러한 변환(잘못된 변환)으로 인해 배열이 깨져서
+		   euc-kr 이든... utf-8 이든...
+		   어떠한 바이트 배열로 읽어오든
+		   결과물이 깨져있는 것을 확인할 수 있다.
+
+		   이미 깨져서 생성된 String 객체의 바이트 배열은
+		   어떤 방식으로든 복구가 불가능하다.
+		*/</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2>Calendar 클래스</h2>
+<p>Calendar 클래스는 추상 클래스이기 때문에 객체를 생성할 수 없다. <br />
+(추상 클래스 : 미완성된 클래스)</p>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token class-name">Calendar</span> ob <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Calendar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//-- 이와 같은 구문을 통해 인스턴스 생성 불가</span></code></pre></div>
+<p>Calendar 클래스 객체(인스턴스)를 생성할 수 있는 방법 <br /></p>
+<ol>
+<li>Calendar ob1 = Calendar.getInstance();</li>
+<li>Calendar ob2 = new GregorianCalendar();</li>
+<li>GregorianCalendar ob3 = new GregorianCalendar(); <br />
+(※ GregorianCalendar : Calendar 클래스의 하위 클래스), 상속, 업캐스팅</li>
+</ol>
+<h3>Test142 - 연, 월, 일, 요일을 Calendar 객체로부터 가져와서 출력</h3>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Calendar</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">GregorianCalendar</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test142</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token comment">// Calendar 클래스 기반 인스턴스 생성</span>
+		<span class="token comment">//Calendar ob = new Calendar(); -- (X)</span>
+		<span class="token class-name">Calendar</span> rightNow <span class="token operator">=</span> <span class="token class-name">Calendar</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token comment">// 생성된 달력(Calendar) 인스턴스를  통해</span>
+		<span class="token comment">// 날짜 관련 정보를 얻어낼 수 있는 메소드 → 『get()』</span>
+		<span class="token keyword">int</span> y <span class="token operator">=</span> rightNow<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>YEAR<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// static final(상수 변수)</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"y : "</span> <span class="token operator">+</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//--==>> y : 2022</span>
+
+		<span class="token keyword">int</span> m <span class="token operator">=</span> rightNow<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>MONTH<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">//-- 『+1』 check~!!!</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"m : "</span> <span class="token operator">+</span> m<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//--==>> m : 7</span>
+
+		<span class="token keyword">int</span> d <span class="token operator">=</span> rightNow<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>DATE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"d : "</span> <span class="token operator">+</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//--==>> d : 25</span>
+
+		<span class="token keyword">int</span> w <span class="token operator">=</span> rightNow<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>DAY_OF_WEEK<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"w : "</span> <span class="token operator">+</span> w<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//--==>> w : 2</span>
+
+		<span class="token comment">// 테스트</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>SUNDAY<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//--==>> 1 → 일요일</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>MONDAY<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//--==>> 2 → 월요일</span>
+        <span class="token comment">//                 :</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>SATURDAY<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//--==>> 7 → 토요일</span>
+
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>y <span class="token operator">+</span> <span class="token string">"-"</span> <span class="token operator">+</span> m <span class="token operator">+</span> <span class="token string">"-"</span> <span class="token operator">+</span> d <span class="token operator">+</span> <span class="token string">" "</span>  <span class="token operator">+</span> w<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//--==>> 2022-7-25 2</span>
+
+		<span class="token class-name">String</span> week<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">;</span>
+		<span class="token keyword">switch</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			<span class="token comment">/*
+			case Calendar.SUNDAY: week = "일요일"; break;
+			case Calendar.MONDAY: week = "월요일"; break;
+                                :
+			case Calendar.SATURDAY: week = "토요일"; break;
+			*/</span>
+			<span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span> week <span class="token operator">=</span> <span class="token string">"일요일"</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+			<span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span> week <span class="token operator">=</span> <span class="token string">"월요일"</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+			<span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span> week <span class="token operator">=</span> <span class="token string">"화요일"</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+			<span class="token keyword">case</span> <span class="token number">4</span><span class="token operator">:</span> week <span class="token operator">=</span> <span class="token string">"수요일"</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+			<span class="token keyword">case</span> <span class="token number">5</span><span class="token operator">:</span> week <span class="token operator">=</span> <span class="token string">"목요일"</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+			<span class="token keyword">case</span> <span class="token number">6</span><span class="token operator">:</span> week <span class="token operator">=</span> <span class="token string">"금요일"</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+			<span class="token keyword">case</span> <span class="token number">7</span><span class="token operator">:</span> week <span class="token operator">=</span> <span class="token string">"토요일"</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>y <span class="token operator">+</span> <span class="token string">"-"</span> <span class="token operator">+</span> m <span class="token operator">+</span> <span class="token string">"-"</span> <span class="token operator">+</span> d <span class="token operator">+</span> <span class="token string">" "</span>  <span class="token operator">+</span> week<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">//--==>> 2022-7-25 월요일</span>
+
+		<span class="token comment">/////////////////////////////////////////////////////////////////////////</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 개행</span>
+
+		<span class="token class-name">Calendar</span> rightNow2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GregorianCalendar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> week2 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"일요일"</span><span class="token punctuation">,</span> <span class="token string">"월요일"</span><span class="token punctuation">,</span> <span class="token string">"화요일"</span><span class="token punctuation">,</span> <span class="token string">"수요일"</span><span class="token punctuation">,</span> <span class="token string">"목요일"</span><span class="token punctuation">,</span> <span class="token string">"금요일"</span> <span class="token punctuation">,</span><span class="token string">"토요일"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+		<span class="token comment">// 달력의 날짜 세팅 → 『set()』메소드 활용</span>
+		rightNow2<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token number">2023</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>			<span class="token comment">// 2023년 1월 16일 check~!!!</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>rightNow2<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>DAY_OF_WEEK<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//--==>> 5</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>week2<span class="token punctuation">[</span>rightNow2<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>DAY_OF_WEEK<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//--==>> 월요일</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3>Calendar 실습 문제</h3>
+<p>사용자로부터 연, 월을 입력받아 달력을 그려주는(출력하는) 프로그램을 구현한다. <br />
+단, Calendar 클래스를 활용하여 작성할 수 있도록 한다. <br />
+※ API Document 참조하여 getActualMaximum() 메소드의 활용 방법 검토할 것</p>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java">실행 예<span class="token punctuation">)</span>
+연도 입력 <span class="token operator">:</span> <span class="token number">0</span>
+연도 입력 <span class="token operator">:</span> <span class="token number">2022</span>
+월 입력 <span class="token operator">:</span> <span class="token operator">-</span><span class="token number">20</span>
+월 입력 <span class="token operator">:</span> <span class="token number">16</span>
+월 입력 <span class="token operator">:</span> <span class="token number">7</span>
+
+    <span class="token punctuation">[</span>  <span class="token number">2022</span>년 <span class="token number">7</span>월  <span class="token punctuation">]</span>
+  일 월 화 수 목 금 토
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+                 <span class="token number">1</span>  <span class="token number">2</span>
+  <span class="token number">3</span>  <span class="token number">4</span>  <span class="token number">5</span>  <span class="token number">6</span>  <span class="token number">7</span>  <span class="token number">8</span>  <span class="token number">9</span>
+ <span class="token number">10</span> <span class="token number">11</span> <span class="token number">12</span> <span class="token number">13</span> <span class="token number">14</span> <span class="token number">15</span> <span class="token number">16</span>
+ <span class="token number">17</span> <span class="token number">18</span> <span class="token number">19</span> <span class="token number">20</span> <span class="token number">21</span> <span class="token number">22</span> <span class="token number">23</span>
+ <span class="token number">24</span> <span class="token number">25</span> <span class="token number">26</span> <span class="token number">27</span> <span class="token number">28</span> <span class="token number">29</span> <span class="token number">30</span>
+ <span class="token number">31</span>
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+계속하려면 아무 키나 누르세요<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></code></pre></div>
+<h3>Test143</h3>
+<div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">BufferedReader</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">InputStreamReader</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Calendar</span></span><span class="token punctuation">;</span>
+<span class="token comment">//import java.util.GregorianCalendar;</span>
+
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test143</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">IOException</span>
+	<span class="token punctuation">{</span>
+		<span class="token comment">//BufferedReader 클래스 기반 인스턴스 생성</span>
+		<span class="token class-name">BufferedReader</span> br <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token comment">// Calendar 클래스 기반 인스턴스 생성</span>
+		<span class="token class-name">Calendar</span> cl <span class="token operator">=</span> <span class="token class-name">Calendar</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token keyword">int</span> y<span class="token punctuation">,</span> m<span class="token punctuation">,</span> w<span class="token punctuation">;</span> <span class="token comment">//년,월,요일</span>
+
+		<span class="token keyword">do</span>
+		<span class="token punctuation">{</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"연도 입력 : "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			y <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>br<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span>y <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token keyword">do</span>
+		<span class="token punctuation">{</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"월 입력 : "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			m <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>br<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span>m <span class="token operator">&lt;</span> <span class="token number">1</span> <span class="token operator">||</span> m <span class="token operator">></span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token comment">// 사용자로부터 입력받은 연(y), 월(m)을 이용하여</span>
+		<span class="token comment">// 달력 날짜 세팅</span>
+		cl<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>y<span class="token punctuation">,</span> m<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">//-- 월 구성 시 입력값(m)을 그대로 사용하는 것이 아니라</span>
+		<span class="token comment">//   입력값에서 1을 뺀 값으로 월을 설정해야 한다.</span>
+		<span class="token comment">//-- 일 구성 시 입력받은 연, 월에 해당하는 1일로 설정해야 한다.</span>
+		<span class="token comment">//   1일의 요일 확인 필요~!!!</span>
+
+		<span class="token comment">// 세팅된 달력의 날짜로부터 요일 가져오기</span>
+		w <span class="token operator">=</span> cl<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>DAY_OF_WEEK<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token comment">// 테스트(확인)</span>
+		<span class="token comment">//System.out.println("w : " + w);</span>
+		<span class="token comment">//--==>> w : 6</span>
+
+		<span class="token comment">/*
+			연도 입력 : 2022
+			월 입력   : 7
+			6 → 2022년 7월 기준 → 금요일 → 2022년 7월 1일은 금요일~!!!
+		*/</span>
+
+		<span class="token comment">// 결과 출력 → 달력 그리기</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"\t[ "</span> <span class="token operator">+</span> y <span class="token operator">+</span> <span class="token string">"년 "</span> <span class="token operator">+</span> m <span class="token operator">+</span> <span class="token string">"월 ]\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"  일  월  화  수  목  금  토"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">" ============================"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token comment">//getActualMaximum(int)</span>
+		<span class="token comment">// ※ getActualMaximum은 날짜가 세팅 된 Calendar 가 가질 수 있는 최대 값</span>
+
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> w<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"    "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">// 테스트(확인)</span>
+		<span class="token comment">//System.out.printf("%4d",1);</span>
+
+		<span class="token comment">// Calendar 클래스 『getActualMaximum()』 메소드 check~!!!</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> cl<span class="token punctuation">.</span><span class="token function">getActualMaximum</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>DATE<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%4d"</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+			w<span class="token operator">++</span><span class="token punctuation">;</span>			<span class="token comment">//-- 반복문을 수행하며 날짜가 증가할 때 마다</span>
+							<span class="token comment">//   요일도 함께 증가할 수 있도록 처리</span>
+							<span class="token comment">//-- 증가한 요일이 일요일이 될 때 마다</span>
+							<span class="token comment">//   개행 후 출력될 수 있도록 처리</span>
+			<span class="token keyword">if</span><span class="token punctuation">(</span>w <span class="token operator">%</span> <span class="token number">7</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+				<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>w <span class="token operator">%</span> <span class="token number">7</span> <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">)</span>				<span class="token comment">//-- 일요일 개행이 적용되지 않았을 때만</span>
+			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//   개행 처리</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">" ============================"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<hr>
+<h2>Source</h2>
+<p>Test File : Test138 ~ Test143 <a href="https://github.com/jp0301/JavaStudy/tree/main/20220725Test143" target="_blank" rel="nofollow">@GitHub</a></p></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog, Have a Good Day 😆<br/>© 2022 Developer Onedoli, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/java/20220725Test143/java_20220725/";window.___webpackCompilationHash="97407620568185534029";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-4718f0fec20e0d09d7f5.js"],"app":["/app-78bdc8bfb6f7f4cb1d25.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-e60472f4969a8fb3c428.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-2a1e946f7d95b774ce51.js"],"component---src-templates-post-template-tsx":["/component---src-templates-post-template-tsx-866341989bf271312a5b.js"]};/*]]>*/</script><script src="/polyfill-4718f0fec20e0d09d7f5.js" nomodule=""></script><script src="/app-78bdc8bfb6f7f4cb1d25.js" async=""></script><script src="/framework-6e68b7056956344bfd29.js" async=""></script><script src="/webpack-runtime-9921910258d9331e8b9e.js" async=""></script></body></html>
