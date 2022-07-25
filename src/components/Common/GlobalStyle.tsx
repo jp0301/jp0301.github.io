@@ -3,13 +3,13 @@ import React, { FunctionComponent } from 'react'
 import { Global, css } from '@emotion/react'
 
 const defaultStyle = css`
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700');
 
   * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Nanum Myeongjo', sans-serif;
   }
 
   html,
