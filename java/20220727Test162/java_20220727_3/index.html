@@ -647,43 +647,43 @@ index 위치는 스캔을 시작하는 위치
 		<span class="token class-name">Vector</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">MyData</span><span class="token punctuation">></span></span> v <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vector</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">MyData</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 		<span class="token comment">// 벡터 자료구조 v 에</span>
-		<span class="token comment">// 정영준 13세 / 정미경 7세 / 한은영 3세</span>
+		<span class="token comment">// 박모씨 13세 / 이모씨 7세 / 김모씨 3세</span>
 		<span class="token comment">// 담아내기</span>
 
 		<span class="token comment">// 방법 ①</span>
 		<span class="token comment">/*
 		MyData st1 = new MyData();
-		st1.setName("정영준");
+		st1.setName("박모씨");
 		st1.setAge(13);
 		v.add(st1);
 
 		MyData st2 = new MyData();
-		st2.setName("정영준");
+		st2.setName("박모씨");
 		st2.setAge(13);
 		v.add(st2);
 
 		MyData st3 = new MyData();
-		st3.setName("정영준");
+		st3.setName("박모씨");
 		st3.setAge(13);
 		v.add(st3);
 		*/</span>
 
 		<span class="token comment">// ②</span>
 		<span class="token comment">/*
-		MyData s1 = new MyData("정영준", 13);
+		MyData s1 = new MyData("박모씨", 13);
 		v.add(s1);
 
-		MyData s2 = new MyData("정미경", 7);
+		MyData s2 = new MyData("이모씨", 7);
 		v.add(s2);
 
-        MyData s3 = new MyData("한은영", 3);
+        MyData s3 = new MyData("김모씨", 3);
 		v.add(s3);
 		*/</span>
 
 		<span class="token comment">// ③</span>
-		v<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyData</span><span class="token punctuation">(</span><span class="token string">"정영준"</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		v<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyData</span><span class="token punctuation">(</span><span class="token string">"정미경"</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		v<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyData</span><span class="token punctuation">(</span><span class="token string">"한은영"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		v<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyData</span><span class="token punctuation">(</span><span class="token string">"박모씨"</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		v<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyData</span><span class="token punctuation">(</span><span class="token string">"이모씨"</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		v<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyData</span><span class="token punctuation">(</span><span class="token string">"김모씨"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"벡터 요소 갯수 : "</span> <span class="token operator">+</span> v<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
