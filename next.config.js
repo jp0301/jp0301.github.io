@@ -9,7 +9,7 @@ module.exports = withContentlayer({
   reactStrictMode: true,
   images: {
     loader: 'akamai',
-    path: '/',
+    path: 'https://jp0301.github.io/jp0301.github.io',
   },
   assetPrefix: !debug ? `/${repository}/` : "",
   eslint: {
