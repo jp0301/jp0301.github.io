@@ -19,7 +19,7 @@ const MainTitleImage = () => {
 
             <div className={styles.titleContain}>
                 <div  className={styles.mainTitle}>
-                    "돌" 처럼 우직한 개발자의 클라우드
+                    돌처럼 우직한 개발자의 클라우드
                 </div>
             </div>
 
