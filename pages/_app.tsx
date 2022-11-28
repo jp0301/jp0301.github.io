@@ -8,7 +8,7 @@ import Container from "../components/Container";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <PortfolioProvider value={{prefix}}>
+    <PortfolioProvider value={ { prefix } }>
       <Container>
         <Component {...pageProps} />
       </Container>
