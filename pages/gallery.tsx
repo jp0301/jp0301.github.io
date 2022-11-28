@@ -17,7 +17,7 @@ const daily  = ({ posts, recent }: InferGetStaticPropsType<typeof getStaticProps
                     {recent.map((post) => (
                         // eslint-disable-next-line react/jsx-key
                         <Image
-                            src={prefix + post.thumbnailUrl}
+                            src={post.thumbnailUrl}
                             alt="thumbnail"
                             layout="fill"
                             objectFit="cover"
@@ -39,7 +39,7 @@ const daily  = ({ posts, recent }: InferGetStaticPropsType<typeof getStaticProps
                         title={post.title}
                         des={post.description}
                         slug={post._raw.flattenedPath}
-                        thumbnailUrl={prefix + post.thumbnailUrl}
+                        thumbnailUrl={post.thumbnailUrl}
                         category={post.category}
                         
                         key={post._id}

@@ -2,7 +2,9 @@ import Image from "next/image";
 
 import WorkPost from "components/DailyPost"
 import { InferGetStaticPropsType } from "next";
+
 import { prefix } from "config/config";
+
 import styles from 'styles/daily.module.css';
 
 import { allWorks } from "contentlayer/generated";
@@ -15,7 +17,7 @@ const work  = ({ posts, recent }: InferGetStaticPropsType<typeof getStaticProps>
                     {recent.map((post) => (
                         // eslint-disable-next-line react/jsx-key
                         <Image
-                            src={prefix + post.thumbnailUrl}
+                            src= {post.thumbnailUrl}
                             alt="thumbnail"
                             layout="fill"
                             objectFit="cover"
@@ -37,7 +39,7 @@ const work  = ({ posts, recent }: InferGetStaticPropsType<typeof getStaticProps>
                         title={post.title}
                         des={post.description}
                         slug={post._raw.flattenedPath}
-                        thumbnailUrl={prefix + post.thumbnailUrl}
+                        thumbnailUrl={post.thumbnailUrl}
                         category={post.category}
                         
                         key={post._id}
