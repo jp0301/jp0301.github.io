@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const debug = process.env.NODE_ENV === "production";
-const repository = "http://jp0301.github.io";
+const repository = "https://jp0301.github.io";
 
 const { withContentlayer } = require("next-contentlayer");
 

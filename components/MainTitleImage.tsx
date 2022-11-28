@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 import styles from "../styles/Home.module.css";
-import mainImage from "../public/blogMain.png";
 
 const MainTitleImage = () => {
+
     return (
         <div className={styles.mtContain}>
             <div className={styles.mainTitleImageContainer}>
             <Image
-                src={mainImage}
+                src= "/blogMain.png"
                 alt="mainImage"
                 width={1920}
                 height={600}
