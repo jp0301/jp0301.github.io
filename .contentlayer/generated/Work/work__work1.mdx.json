@@ -1,0 +1,21 @@
+{
+  "title": "221105 블로그 작업일지",
+  "date": "2022-11-05",
+  "description": "블로그 개설 및 관리와 관련한 일지를 작성합니다.",
+  "category": "work",
+  "thumbnailUrl": "/posts/thumbnail/kakao.jpg",
+  "body": {
+    "raw": "\r\n최종 수정일자: 2022-11-05T20:35(ㅇㅇ개월 전)\r\n\r\n# Next.JS 에 대하여\r\n",
+    "code": "var Component=(()=>{var h=Object.create;var s=Object.defineProperty;var l=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,d=Object.prototype.hasOwnProperty;var j=(t,n)=>()=>(n||t((n={exports:{}}).exports,n),n.exports),_=(t,n)=>{for(var o in n)s(t,o,{get:n[o],enumerable:!0})},c=(t,n,o,a)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let r of p(n))!d.call(t,r)&&r!==o&&s(t,r,{get:()=>n[r],enumerable:!(a=l(n,r))||a.enumerable});return t};var g=(t,n,o)=>(o=t!=null?h(u(t)):{},c(n||!t||!t.__esModule?s(o,\"default\",{value:t,enumerable:!0}):o,t)),f=t=>c(s({},\"__esModule\",{value:!0}),t);var m=j((y,i)=>{i.exports=_jsx_runtime});var D={};_(D,{default:()=>w,frontmatter:()=>b});var e=g(m()),b={title:\"221105 \\uBE14\\uB85C\\uADF8 \\uC791\\uC5C5\\uC77C\\uC9C0\",date:new Date(16676064e5),description:\"\\uBE14\\uB85C\\uADF8 \\uAC1C\\uC124 \\uBC0F \\uAD00\\uB9AC\\uC640 \\uAD00\\uB828\\uD55C \\uC77C\\uC9C0\\uB97C \\uC791\\uC131\\uD569\\uB2C8\\uB2E4.\",category:\"work\",thumbnailUrl:\"/posts/thumbnail/kakao.jpg\"};function x(t){let n=Object.assign({p:\"p\",h1:\"h1\"},t.components);return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsx)(n.p,{children:\"\\uCD5C\\uC885 \\uC218\\uC815\\uC77C\\uC790: 2022-11-05T20:35(\\u3147\\u3147\\uAC1C\\uC6D4 \\uC804)\"}),`\n`,(0,e.jsx)(n.h1,{children:\"Next.JS \\uC5D0 \\uB300\\uD558\\uC5EC\"})]})}function k(t={}){let{wrapper:n}=t.components||{};return n?(0,e.jsx)(n,Object.assign({},t,{children:(0,e.jsx)(x,t)})):x(t)}var w=k;return f(D);})();\n;return Component;"
+  },
+  "_id": "work/work1.mdx",
+  "_raw": {
+    "sourceFilePath": "work/work1.mdx",
+    "sourceFileName": "work1.mdx",
+    "sourceFileDir": "work",
+    "contentType": "mdx",
+    "flattenedPath": "work/work1"
+  },
+  "type": "Work",
+  "slug": "work1"
+}

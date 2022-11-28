@@ -1,0 +1,47 @@
+.upContainer {
+  position: relative;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 550px;
+  position: relative;
+  margin-bottom: 50px;
+  filter: brightness(50%);
+}
+
+.title_container {
+  text-align: center;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  width: 100%;
+  font-size: 40px;
+  margin: 15px 0 20px 15px;
+  text-shadow: 2px 2px 2px black;
+}
+
+.subtitle1 {
+  width: 100%;
+  font-size: 24px;
+  font-family: "Blacksword";
+  color: yellow;
+  margin: 15px 0 10px 15px;
+  text-shadow: 2px 2px 2px black;
+}
+
+.subtitle2 {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 15px 0 10px 15px;
+  text-shadow: 2px 2px 2px black;
+}
+
+.post_container {
+  width: 100%;
+}

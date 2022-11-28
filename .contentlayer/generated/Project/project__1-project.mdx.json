@@ -1,0 +1,21 @@
+{
+  "title": "JAVA:자바 콘솔 프로젝트(semi)",
+  "date": "2022-07-15",
+  "description": "학원에서 첫 과목으로 배운 자바 Fundumental을 활용하여 세미 프로젝트 진행",
+  "category": "project",
+  "thumbnailUrl": "/posts/thumbnail/kakao.jpg",
+  "body": {
+    "raw": "\r\n# [JAVA] 자바 콘솔 프로젝트.semi\r\n",
+    "code": "var Component=(()=>{var l=Object.create;var r=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var h=Object.getOwnPropertyNames;var j=Object.getPrototypeOf,p=Object.prototype.hasOwnProperty;var x=(t,n)=>()=>(n||t((n={exports:{}}).exports,n),n.exports),f=(t,n)=>{for(var e in n)r(t,e,{get:n[e],enumerable:!0})},c=(t,n,e,a)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let o of h(n))!p.call(t,o)&&o!==e&&r(t,o,{get:()=>n[o],enumerable:!(a=d(n,o))||a.enumerable});return t};var _=(t,n,e)=>(e=t!=null?l(j(t)):{},c(n||!t||!t.__esModule?r(e,\"default\",{value:t,enumerable:!0}):e,t)),b=t=>c(r({},\"__esModule\",{value:!0}),t);var m=x((w,i)=>{i.exports=_jsx_runtime});var M={};f(M,{default:()=>D,frontmatter:()=>g});var s=_(m()),g={title:\"JAVA:\\uC790\\uBC14 \\uCF58\\uC194 \\uD504\\uB85C\\uC81D\\uD2B8(semi)\",date:new Date(16578432e5),description:\"\\uD559\\uC6D0\\uC5D0\\uC11C \\uCCAB \\uACFC\\uBAA9\\uC73C\\uB85C \\uBC30\\uC6B4 \\uC790\\uBC14 Fundumental\\uC744 \\uD65C\\uC6A9\\uD558\\uC5EC \\uC138\\uBBF8 \\uD504\\uB85C\\uC81D\\uD2B8 \\uC9C4\\uD589\",category:\"project\",thumbnailUrl:\"/posts/thumbnail/kakao.jpg\"};function u(t){let n=Object.assign({h1:\"h1\"},t.components);return(0,s.jsx)(n.h1,{children:\"[JAVA] \\uC790\\uBC14 \\uCF58\\uC194 \\uD504\\uB85C\\uC81D\\uD2B8.semi\"})}function A(t={}){let{wrapper:n}=t.components||{};return n?(0,s.jsx)(n,Object.assign({},t,{children:(0,s.jsx)(u,t)})):u(t)}var D=A;return b(M);})();\n;return Component;"
+  },
+  "_id": "project/1-project.mdx",
+  "_raw": {
+    "sourceFilePath": "project/1-project.mdx",
+    "sourceFileName": "1-project.mdx",
+    "sourceFileDir": "project",
+    "contentType": "mdx",
+    "flattenedPath": "project/1-project"
+  },
+  "type": "Project",
+  "slug": "1-project"
+}

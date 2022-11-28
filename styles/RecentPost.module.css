@@ -1,0 +1,60 @@
+.RecentPostContainer {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+
+  display: flex;
+}
+
+.RecentPostCard {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 100%;
+  height: 400px;
+  cursor: pointer;
+  color: #bbbbbb;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.RecentPostCardImage {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 270px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.RecentPostCard:hover {
+  transition: all 0.3s;
+  color: #fff;
+}
+
+.RecentPostCard > .RecentPostCardImage:hover {
+  margin-top: -10px;
+  transition: all 0.3s;
+  color: #fff;
+}
+
+.RecentPostCard > div > h2 {
+  font-size: 24px;
+  margin: 15px;
+  font-weight: 500;
+}
+
+.RecentPostCard > div > p {
+  font-size: 13px;
+  margin: 15px;
+  color: #bbbbbb;
+}
+
+.RecentPostCard > div > span {
+  font-size: 13px;
+  color: #bbbbbb;
+  margin: 15px 5px 0 0px;
+  float: right;
+}
